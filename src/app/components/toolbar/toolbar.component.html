@@ -1,0 +1,15 @@
+<mat-toolbar color="primary" class="toolbar">
+  <div>
+    <button mat-button><h3>E-menu</h3></button>
+  </div>
+  <div>
+    <ng-container *ngFor=" let category of categories;">
+      <button mat-button>{{category.name}}</button>
+    </ng-container>
+  </div>
+  <div>
+    <button mat-icon-button>
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>

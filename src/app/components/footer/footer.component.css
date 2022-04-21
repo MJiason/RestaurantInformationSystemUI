@@ -1,0 +1,11 @@
+.footer{
+  display: flex;
+  justify-content: space-between;
+  background: black;
+  color: white;
+}
+
+.footer-row{
+  display: flex;
+  justify-content: space-between;
+}
