@@ -7,13 +7,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { MenuComponent } from './components/menu/menu.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
-import { HeaderComponent } from './components/header/header.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {MatListModule} from "@angular/material/list";
 import {MatGridListModule} from "@angular/material/grid-list";
 import { MenuItemComponent } from './components/menu/menu-item/menu-item.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -21,7 +21,6 @@ import { MenuItemComponent } from './components/menu/menu-item/menu-item.compone
     MenuComponent,
     FooterComponent,
     ToolbarComponent,
-    HeaderComponent,
     MenuItemComponent,
   ],
   imports: [
@@ -33,6 +32,7 @@ import { MenuItemComponent } from './components/menu/menu-item/menu-item.compone
     MatIconModule,
     MatListModule,
     MatGridListModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

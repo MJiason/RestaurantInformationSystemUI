@@ -6,29 +6,50 @@
   margin-top: 10%;
   margin-left: 20px;
   border-radius: 10px;
-  border:0.001em solid #e3e3e3;
-  padding: 7px;
+  border: 0.001em solid #e3e3e3;
+  padding: 10px;
   font-family: Arial, serif;
   transition: 500ms ease;
 }
-.catalog-item:hover{
+
+.catalog-item:hover {
   box-shadow: 0 0 0 2px rgba(215, 215, 215, 0.74);
   transition: 500ms ease;
   -ms-transform: scale(1.02);
   transform: scale(1.02);
 }
-.image {
+
+.catalog-image {
   width: 270px;
   height: 170px;
   border-radius: 10px;
   margin-bottom: 15px;
 }
 
-.button {
+.catalog-button {
+  width: 120px;
+  height: 50px;
+  background: #fd0c4b;
+  border-color: white;
+  border-radius: 10px;
+  font-family: Spartan, serif;
+  font-size: 15px;
+  color: white;
   -webkit-filter: brightness(100%);
-   transition: all 500ms ease;
+  transition: all 500ms ease;
 }
 
-.button:hover {
+.catalog-button:hover {
   -webkit-filter: brightness(70%);
+}
+
+.catalog-text {
+  margin-left: 8px;
+  margin-right: 5px
+}
+
+.catalog-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline
 }

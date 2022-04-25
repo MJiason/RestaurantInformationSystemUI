@@ -1,17 +1,6 @@
-<div  class="catalog">
- <app-menu-item></app-menu-item>
- <app-menu-item></app-menu-item>
- <app-menu-item></app-menu-item>
- <app-menu-item></app-menu-item>
- <app-menu-item></app-menu-item>
- <app-menu-item></app-menu-item>
- <app-menu-item></app-menu-item>
- <app-menu-item></app-menu-item>
- <app-menu-item></app-menu-item>
- <app-menu-item></app-menu-item>
- <app-menu-item></app-menu-item>
- <app-menu-item></app-menu-item>
- <app-menu-item></app-menu-item>
- <app-menu-item></app-menu-item>
+<div class="catalog">
+  <ng-container *ngFor="let item of dishes">
+    <app-menu-item [item] = item></app-menu-item>
+  </ng-container>
 </div>
 
