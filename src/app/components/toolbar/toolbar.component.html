@@ -4,7 +4,7 @@
   </div>
   <div>
     <ng-container *ngFor=" let category of categories;">
-      <button mat-button>{{category.name}}</button>
+      <button mat-button (click)="handleButton(category.name)">{{category.name}}</button>
     </ng-container>
   </div>
   <div>
