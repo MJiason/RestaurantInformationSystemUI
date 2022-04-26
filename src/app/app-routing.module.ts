@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from "@angular/router";
 import {MenuComponent} from "./components/menu/menu.component";
-import {AppComponent} from "./app.component";
 import {routerUrl} from "../environments/router-manger";
+import {DishComponent} from "./components/dish/dish.component";
 
 const routes: Routes = [
   { path: routerUrl.menu, component: MenuComponent },
-  { path: 'start', component: AppComponent },
+  { path: routerUrl.dish, component: DishComponent },
 ];
 
 @NgModule({

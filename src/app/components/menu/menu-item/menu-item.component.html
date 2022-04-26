@@ -1,17 +1,23 @@
 <div class="catalog-item">
-  <img
-    src="{{item.photo}}"
-    class="catalog-image" alt="{{item.name}}">
-
+  <a [routerLink]="['/dish', item.id]">
+    <img
+      src="{{item.photo}}" (click)="redirect(item.id)"
+      class="catalog-image" alt="{{item.name}}">
+  </a>
   <div class="catalog-text">
-    <h4><strong>{{item.name}}</strong></h4>
 
-    <h5>{{item.ingredients}}</h5>
+    <h4 [routerLink]="['/dish', item.id]"><strong>{{item.name}}</strong></h4>
+
+    <h5>{{item.ingredients.toString()}}</h5>
+
     <h5><strong>Calories {{item.calories}}</strong></h5>
+
     <h5><strong>Weight {{item.weight}}</strong></h5>
+
     <div class="catalog-bottom">
       <h3><strong>{{item.price}} UAN</strong></h3>
       <button class="catalog-button">Add to card</button>
     </div>
+
   </div>
 </div>

@@ -1,3 +1,4 @@
 export const routerUrl = {
-  menu: "menu"
+  menu: "menu",
+  dish: "dish/:id"
 }

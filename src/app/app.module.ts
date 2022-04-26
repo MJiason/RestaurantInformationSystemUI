@@ -14,6 +14,7 @@ import {MatListModule} from "@angular/material/list";
 import {MatGridListModule} from "@angular/material/grid-list";
 import { MenuItemComponent } from './components/menu/menu-item/menu-item.component';
 import {HttpClientModule} from "@angular/common/http";
+import { DishComponent } from './components/dish/dish.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import {HttpClientModule} from "@angular/common/http";
     FooterComponent,
     ToolbarComponent,
     MenuItemComponent,
+    DishComponent,
   ],
   imports: [
     BrowserModule,

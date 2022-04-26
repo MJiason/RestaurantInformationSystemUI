@@ -2,3 +2,20 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.catalog-button {
+  width: 120px;
+  height: 50px;
+  background: #fd0c4b;
+  border-color: white;
+  border-radius: 10px;
+  font-family: Spartan, serif;
+  font-size: 15px;
+  color: white;
+  -webkit-filter: brightness(100%);
+  transition: all 500ms ease;
+}
+
+.catalog-button:hover {
+  -webkit-filter: brightness(70%);
+}

@@ -1,0 +1,40 @@
+.dish-container{
+  display: flex;
+  justify-content: space-between;
+}
+.dish-image {
+  height: 450px;
+  object-fit: cover;
+}
+
+.ingredient-container {
+  margin-left: 15%;
+  font-weight: bold;
+  font-size: 30px;
+  width: 350px;
+}
+
+.ingredient-image-container{
+  display: flex;
+  width: 400px;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+
+.ingredient-image {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 20px;
+  border: 0.001em solid #e3e3e3;
+}
+.catalog-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline
+}
+
+
+
+

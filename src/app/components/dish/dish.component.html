@@ -1,0 +1,23 @@
+<div class="dish-container">
+  <div>
+    <img class="dish-image" src="{{dish.photo}}" alt="">
+  </div>
+
+  <div class="ingredient-container">
+    <p>{{dish.name}}</p>
+    <h4>Description Description Description Description Description Description Description</h4>
+    <div class="ingredient-image-container">
+      <ng-container *ngFor="let ingredient of dish.ingredients">
+        <div>
+          <img class="ingredient-image" src="{{ingredient.photo}}" alt="">
+          <h4>{{ingredient.name}}</h4>
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="catalog-bottom">
+      <h3><strong>{{dish.price}} UAN</strong></h3>
+      <button class="catalog-button">Add to card</button>
+    </div>
+  </div>
+</div>
