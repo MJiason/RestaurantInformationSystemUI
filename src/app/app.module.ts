@@ -15,6 +15,8 @@ import {MatGridListModule} from "@angular/material/grid-list";
 import { MenuItemComponent } from './components/menu/menu-item/menu-item.component';
 import {HttpClientModule} from "@angular/common/http";
 import { DishComponent } from './components/dish/dish.component';
+import { CardComponent } from './components/toolbar/card/card.component';
+import {MatMenuModule} from "@angular/material/menu";
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { DishComponent } from './components/dish/dish.component';
     ToolbarComponent,
     MenuItemComponent,
     DishComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,8 @@ import { DishComponent } from './components/dish/dish.component';
     MatIconModule,
     MatListModule,
     MatGridListModule,
-    HttpClientModule
+    HttpClientModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

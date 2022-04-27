@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Category} from "../../models/category";
 import {CategoryService} from "../../services/category.service";
 import {Router} from "@angular/router";
 import {routerUrl} from "../../../environments/router-manger";
+import {CardComponent} from "./card/card.component";
 
 @Component({
   selector: 'app-toolbar',
@@ -10,6 +11,7 @@ import {routerUrl} from "../../../environments/router-manger";
   styleUrls: ['./toolbar.component.css']
 })
 export class ToolbarComponent implements OnInit {
+
   public categories: Category[] = [];
 
   constructor(

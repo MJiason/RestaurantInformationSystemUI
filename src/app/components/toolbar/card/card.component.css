@@ -1,0 +1,17 @@
+::ng-deep.mat-menu-panel {
+  max-width: fit-content !important;
+}
+
+.card-row {
+  width: fit-content;
+  display: flex;
+}
+
+.card-image{
+  width: 60px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-left: 10px;
+  border: 0.001em solid #e3e3e3;
+}
