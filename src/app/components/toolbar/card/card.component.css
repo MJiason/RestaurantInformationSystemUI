@@ -4,7 +4,7 @@
 
 .card-row {
   width: fit-content;
-  display: flex;
+  min-width: 300px;
 }
 
 .card-image{
@@ -14,4 +14,10 @@
   border-radius: 8px;
   margin-left: 10px;
   border: 0.001em solid #e3e3e3;
+}
+
+.card-row-elem {
+  display: flex;
+  width: 300px;
+  justify-content: space-around;
 }

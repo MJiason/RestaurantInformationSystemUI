@@ -8,7 +8,10 @@
     </ng-container>
   </div>
   <div>
-    <app-card></app-card>
+    <button mat-icon-button (click)="openDialog()" matBadge="{{}}" matBadgePosition="before" matBadgeColor="warn"
+            matBadgeSize="small">
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
     <button class="catalog-button">Checkout</button>
   </div>
 </mat-toolbar>

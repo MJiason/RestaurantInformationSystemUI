@@ -1,17 +1,33 @@
-<button mat-icon-button [matMenuTriggerFor]="menu">
-  <mat-icon>shopping_cart</mat-icon>
-</button>
-<mat-menu #menu="matMenu">
-  <div class="card-row">
-    <img class="card-image" src="https://thumbs.dreamstime.com/b/chocolate-ice-cream-cake-selective-focus-chocolate-ice-cream-cake-175643276.jpg">
-    <button mat-icon-button>
-      <mat-icon>add</mat-icon>
-    </button>
-    <button mat-icon-button>
-      <mat-icon>remove</mat-icon>
-    </button>
-    <button mat-icon-button>
-      <mat-icon>clear</mat-icon>
-    </button>
+<mat-dialog-content>
+  <div>
+    <ng-container *ngFor="let item of card.dishes">
+      <div class="card-row">
+        <div class="card-row-elem">
+          <h2 style="margin-top: 12px">{{item.dish.name}}</h2>
+          <button mat-icon-button (click)="removeFromCard(item.dish.id)">
+            <mat-icon>clear</mat-icon>
+          </button>
+        </div>
+
+        <div class="card-row-elem">
+          <h3 style="margin-top: 10px">{{item.dish.price}} UAH</h3>
+          <div style="display: flex; background: #fd0c4b; border-radius: 20px; height: 45px">
+            <button mat-icon-button (click)="decCount(item.dish.id)">
+              <mat-icon>remove</mat-icon>
+            </button>
+            <h3 style="margin-top: 10px; color: white">{{item.count}}</h3>
+            <button mat-icon-button (click)="incCount(item.dish.id)">
+              <mat-icon>add</mat-icon>
+            </button>
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+
+      </div>
+    </ng-container>
+    <div class="card-row-elem" style="margin-top: 20px">
+      <h3>Total</h3>
+      <h3>{{totalCount}}UAH</h3>
+    </div>
   </div>
-</mat-menu>
+</mat-dialog-content>

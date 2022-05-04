@@ -3,6 +3,7 @@ import {Category} from "../../models/category";
 import {CategoryService} from "../../services/category.service";
 import {Router} from "@angular/router";
 import {routerUrl} from "../../../environments/router-manger";
+import {MatDialog} from "@angular/material/dialog";
 import {CardComponent} from "./card/card.component";
 
 @Component({
@@ -14,14 +15,22 @@ export class ToolbarComponent implements OnInit {
 
   public categories: Category[] = [];
 
+
   constructor(
+    @ViewChild(CardComponent) cardComponent : CardComponent,
     private categoryService: CategoryService,
-    private router: Router
+    private router: Router,
+    public dialog: MatDialog
   ) {
   }
 
   ngOnInit(): void {
     this.getAllCategories();
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(CardComponent);
+    dialogRef.updatePosition({ top: '65px', right: '70px' });
   }
 
   private getAllCategories(): void {
