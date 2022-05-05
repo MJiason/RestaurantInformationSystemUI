@@ -1,10 +1,11 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Category} from "../../models/category";
 import {CategoryService} from "../../services/category.service";
 import {Router} from "@angular/router";
 import {routerUrl} from "../../../environments/router-manger";
 import {MatDialog} from "@angular/material/dialog";
 import {CardComponent} from "./card/card.component";
+import {CardService} from "../../services/card.service";
 
 @Component({
   selector: 'app-toolbar',
@@ -17,7 +18,7 @@ export class ToolbarComponent implements OnInit {
 
 
   constructor(
-    @ViewChild(CardComponent) cardComponent : CardComponent,
+    public cardService: CardService,
     private categoryService: CategoryService,
     private router: Router,
     public dialog: MatDialog
@@ -30,7 +31,7 @@ export class ToolbarComponent implements OnInit {
 
   openDialog() {
     const dialogRef = this.dialog.open(CardComponent);
-    dialogRef.updatePosition({ top: '65px', right: '70px' });
+    dialogRef.updatePosition({top: '65px', right: '70px'});
   }
 
   private getAllCategories(): void {
@@ -41,9 +42,9 @@ export class ToolbarComponent implements OnInit {
   }
 
   public handleButton(category: string): void {
-      this.router.navigate([routerUrl.menu],
-        {queryParams: {category: category}})
-        .then();
+    this.router.navigate([routerUrl.menu],
+      {queryParams: {category: category}})
+      .then();
   }
 
   private static toUpperCase(categories: Category[]): Category[] {

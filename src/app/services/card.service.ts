@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {Injectable, OnInit} from '@angular/core';
 import {Dish} from "../models/dish";
 import {DishExtended} from "../models/dish-extended";
 import {Card, CardItem} from "../models/card";
@@ -6,10 +6,17 @@ import {Card, CardItem} from "../models/card";
 @Injectable({
   providedIn: 'root'
 })
-export class CardService {
+export class CardService implements OnInit {
   private cardKey = "card";
+  public dishesCount: number = 0;
 
   constructor() {
+    this.getDishesCount();
+  }
+
+  ngOnInit(): void {
+    console.log("service init");
+    this.getDishesCount();
   }
 
   public addToCard(dish: Dish | DishExtended): void {
@@ -27,6 +34,7 @@ export class CardService {
       card.dishes.push(cardItem);
     }
     localStorage.setItem(this.cardKey, JSON.stringify(card));
+    this.getDishesCount();
   }
 
   public removeFromCard(dishId: number): void {
@@ -36,6 +44,7 @@ export class CardService {
     let card = <Card>JSON.parse(localStorage.getItem(this.cardKey) || "");
     card.dishes = card.dishes.filter((item) => item.dish.id !== dishId);
     localStorage.setItem(this.cardKey, JSON.stringify(card));
+    this.getDishesCount();
   }
 
   public incDishCount(dishId: number): void {
@@ -48,6 +57,7 @@ export class CardService {
     }
     card.dishes[this.getIndex(card, dishId)].count++;
     localStorage.setItem(this.cardKey, JSON.stringify(card));
+    this.getDishesCount();
   }
 
   public decDishCount(dishId: number): void {
@@ -65,6 +75,7 @@ export class CardService {
       card.dishes[this.getIndex(card, dishId)].count--;
     }
     localStorage.setItem(this.cardKey, JSON.stringify(card));
+    this.getDishesCount();
   }
 
 
@@ -74,7 +85,6 @@ export class CardService {
     }
     return <Card>JSON.parse(localStorage.getItem(this.cardKey) || "");
   }
-
 
 
   private ifDishAlreadyInCard(cardItems: CardItem[], dishId: number): boolean {
@@ -92,6 +102,18 @@ export class CardService {
     let index;
     index = card.dishes.findIndex((item) => item.dish.id === id)
     return index;
+  }
+
+  private getDishesCount(): void {
+    if (!localStorage.getItem(this.cardKey)) {
+      this.dishesCount = 0;
+    }
+    let count = 0;
+    let card = <Card>JSON.parse(localStorage.getItem(this.cardKey) || "");
+    card.dishes.forEach((item) => {
+      count += item.count
+    })
+    this.dishesCount = count;
   }
 
 }
