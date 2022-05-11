@@ -1,0 +1,50 @@
+<form class="example-container" [formGroup]="options">
+  <div >
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput type="text" [formControl]="name">
+    </mat-form-field>
+
+
+    <mat-form-field appearance="fill">
+      <mat-label>Category</mat-label>
+      <mat-select [compareWith]="compareObjects"
+                  formControlName="category">
+        <mat-option *ngFor="let item of categories"
+                    [value]="category">
+          {{item.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Weight</mat-label>
+      <input matInput type="number" [formControl]="weight">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Calories</mat-label>
+      <input matInput type="number" [formControl]="calories">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Price</mat-label>
+      <input matInput type="number" [formControl]="price">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Discount</mat-label>
+      <input matInput type="number" [formControl]="discount">
+    </mat-form-field>
+  </div>
+    <ng-container *ngIf="dish">
+      <app-ingredient-select
+        [dish]="dish"
+        [ingredients]="ingredientsControl">
+      </app-ingredient-select>
+    </ng-container>
+
+    <button mat-button [disabled]="options.invalid" (click)="getValue()">Save</button>
+
+</form>
+

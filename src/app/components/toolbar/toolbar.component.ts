@@ -47,7 +47,7 @@ export class ToolbarComponent implements OnInit {
       .then();
   }
 
-  private static toUpperCase(categories: Category[]): Category[] {
+  public static toUpperCase(categories: Category[]): Category[] {
     if (!categories) {
       return [];
     }

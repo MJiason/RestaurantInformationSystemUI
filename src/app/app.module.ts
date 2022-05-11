@@ -19,8 +19,18 @@ import {CardComponent} from './components/toolbar/card/card.component';
 import {MatMenuModule} from "@angular/material/menu";
 import {MatCardModule} from "@angular/material/card";
 import {MatDividerModule} from "@angular/material/divider";
-import {MatDialogModule, MatDialogRef} from "@angular/material/dialog";
+import {MatDialogModule} from "@angular/material/dialog";
 import {MatBadgeModule} from "@angular/material/badge";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import { DishEditComponent } from './components/dish-edit/dish-edit.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatSelectModule} from "@angular/material/select";
+import {MatOptionModule} from "@angular/material/core";
+import {MatInputModule} from "@angular/material/input";
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
+import { IngredientSelectComponent } from './components/dish-edit/ingredient-select/ingredient-select.component';
+import {MatChipsModule} from "@angular/material/chips";
 
 @NgModule({
   declarations: [
@@ -31,6 +41,8 @@ import {MatBadgeModule} from "@angular/material/badge";
     MenuItemComponent,
     DishComponent,
     CardComponent,
+    DishEditComponent,
+    IngredientSelectComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +59,14 @@ import {MatBadgeModule} from "@angular/material/badge";
     MatDividerModule,
     MatDialogModule,
     MatBadgeModule,
+    MatProgressSpinnerModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatAutocompleteModule,
+    MatChipsModule,
   ],
   providers: [CardComponent],
   entryComponents: [CardComponent],

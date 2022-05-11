@@ -15,7 +15,6 @@ export class CardService implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log("service init");
     this.getDishesCount();
   }
 

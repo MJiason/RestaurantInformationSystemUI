@@ -1,0 +1,6 @@
+.example-container {
+  margin-right: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}

@@ -18,6 +18,10 @@
     <div class="catalog-bottom">
       <h3><strong>{{dish.price}} UAN</strong></h3>
       <button class="catalog-button">Add to card</button>
+      <span>
+        <button [routerLink]="['/dish-edit', dish.id]" mat-button class="admin-button">Edit dish</button>
+      </span>
     </div>
+
   </div>
 </div>
