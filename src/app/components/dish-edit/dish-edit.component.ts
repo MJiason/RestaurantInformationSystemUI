@@ -8,6 +8,7 @@ import {Category} from "../../models/category";
 import {CategoryService} from "../../services/category.service";
 import {ToolbarComponent} from "../toolbar/toolbar.component";
 import {IngredientService} from "../../services/ingredient.service";
+import {EntityTypes} from "../../models/enums/EntityTypes";
 
 @Component({
   selector: 'app-dish-edit',
@@ -18,6 +19,7 @@ export class DishEditComponent implements OnInit {
   dish!: DishExtended;
   categories: Category[] = [];
   ingredients: Ingredient[] = [];
+  entityType: EntityTypes = EntityTypes.DISH;
   currCategory!: Category;
   options!: FormGroup;
   id = new FormControl('', Validators.required);
@@ -102,7 +104,7 @@ export class DishEditComponent implements OnInit {
   }
 
   compareObjects(object1: any, object2: any) {
-    return object1 && object2 && object1.value.id === object2.id;
+    return object1 && object2 && object1.id === object2.id;
   }
 
 }

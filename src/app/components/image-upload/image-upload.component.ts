@@ -14,6 +14,8 @@ import {EntityTypes} from "../../models/enums/EntityTypes";
 })
 export class ImageUploadComponent{
   @Input() image!:string
+  @Input() id!: number;
+  @Input() entityType!: EntityTypes;
 
   constructor(private imageService: ImageService) {
   }
@@ -22,7 +24,7 @@ export class ImageUploadComponent{
   fileControl: FormControl = new FormControl(null, Validators.required);
 
   public savePhoto(): void {
-    let imageRequest = new SaveImageRequest(1, EntityTypes.DISH);
+    let imageRequest = new SaveImageRequest(this.id, this.entityType);
     this.imageService.uploadImage(this.fileControl.value, imageRequest).
     subscribe();
   }
