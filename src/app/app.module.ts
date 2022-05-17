@@ -27,10 +27,13 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatSelectModule} from "@angular/material/select";
 import {MatOptionModule} from "@angular/material/core";
 import {MatInputModule} from "@angular/material/input";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import { IngredientSelectComponent } from './components/dish-edit/ingredient-select/ingredient-select.component';
 import {MatChipsModule} from "@angular/material/chips";
+import { ImageUploadComponent } from './components/image-upload/image-upload.component';
+import {ImageCropperModule} from "ngx-image-cropper";
+import {NgxMatFileInputModule} from "@angular-material-components/file-input";
 
 @NgModule({
   declarations: [
@@ -43,6 +46,7 @@ import {MatChipsModule} from "@angular/material/chips";
     CardComponent,
     DishEditComponent,
     IngredientSelectComponent,
+    ImageUploadComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,6 +71,10 @@ import {MatChipsModule} from "@angular/material/chips";
     ReactiveFormsModule,
     MatAutocompleteModule,
     MatChipsModule,
+    ImageCropperModule,
+    FormsModule,
+    NgxMatFileInputModule
+
   ],
   providers: [CardComponent],
   entryComponents: [CardComponent],

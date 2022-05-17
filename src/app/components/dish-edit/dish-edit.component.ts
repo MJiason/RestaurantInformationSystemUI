@@ -18,14 +18,16 @@ export class DishEditComponent implements OnInit {
   dish!: DishExtended;
   categories: Category[] = [];
   ingredients: Ingredient[] = [];
+  currCategory!: Category;
   options!: FormGroup;
+  id = new FormControl('', Validators.required);
   name = new FormControl('', Validators.required);
-  category = new FormControl('', Validators.required);
+  category = new FormControl(null, Validators.required);
   weight = new FormControl('', Validators.required);
   calories = new FormControl('', Validators.required);
   price = new FormControl('', Validators.required);
   discount = new FormControl('', Validators.required);
-  ingredientsControl: FormControl = new FormControl([], Validators.required);
+  ingredientsControl = new FormControl([], Validators.required);
 
 
   constructor(
@@ -43,6 +45,7 @@ export class DishEditComponent implements OnInit {
     this.getAllIngredients();
     this.getDish();
     this.options = this.fb.group({
+      id: this.id,
       name: this.name,
       category: this.category,
       weight: this.weight,
@@ -59,6 +62,7 @@ export class DishEditComponent implements OnInit {
     this.dishService.getDish(id).subscribe(
       (dish) => {
         this.dish = dish;
+        this.currCategory = dish.category;
         this.setValues()
       }
     );
@@ -66,6 +70,7 @@ export class DishEditComponent implements OnInit {
 
   private setValues(): void {
     this.options.setValue({
+      "id": this.dish.id,
       "name": this.dish.name,
       "category": this.dish.category,
       "weight": this.dish.weight,
@@ -77,7 +82,8 @@ export class DishEditComponent implements OnInit {
   }
 
   getValue(): void {
-    console.log(this.options.value);
+    this.dishService.updateDish(this.options.value)
+      .subscribe();
   }
 
   private getAllCategories(): void {
@@ -96,7 +102,7 @@ export class DishEditComponent implements OnInit {
   }
 
   compareObjects(object1: any, object2: any) {
-    return object1.value && object2 && object1.value.id === object2.id;
+    return object1 && object2 && object1.value.id === object2.id;
   }
 
 }

@@ -9,7 +9,7 @@ import {DishExtended} from "../models/dish-extended";
   providedIn: 'root'
 })
 export class DishService {
-  private dishUrl = `${environment.url}/dish`
+  private dishUrl = `${environment.url}/dish`;
 
   constructor(private http: HttpClient) { }
 
@@ -21,5 +21,10 @@ export class DishService {
 
   public getDish(id: number): Observable<DishExtended> {
       return this.http.get<DishExtended>(`${this.dishUrl}/${id}`);
+  }
+
+  public updateDish(dish: DishExtended): Observable<DishExtended> {
+    console.log(dish)
+    return this.http.post<DishExtended>(this.dishUrl, dish);
   }
 }

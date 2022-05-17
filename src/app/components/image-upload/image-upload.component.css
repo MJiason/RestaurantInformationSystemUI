@@ -1,0 +1,14 @@
+.upload-image{
+  width: 400px;
+  height: 230px;
+  object-fit: cover;
+}
+
+.upload-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-uploader {
+  margin-top: 20px;
+}
