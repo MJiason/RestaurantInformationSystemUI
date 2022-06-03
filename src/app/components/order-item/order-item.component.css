@@ -1,0 +1,36 @@
+.order-item{
+  background: #ffffff;
+  border-radius: 10px;
+  min-height: 300px;
+  min-width: 250px;
+  margin-right: 35px;
+  margin-bottom: 35px;
+  border: 0.001em solid ;
+  padding: 20px;
+  color: #000000;
+}
+.flex{
+  display: flex;
+  justify-content: space-between;
+}
+._new-order {
+  border-color: #75c077;
+}
+._new-order .orderTop{
+  color: green;
+}
+._new-order .mat-success {
+  background-color: white;
+  color: green;
+}
+
+._submit-order {
+  border-color: #dcc895;
+}
+._submit-order .orderTop{
+  color: #ea8d54;
+}
+._submit-order .mat-success {
+  background-color: white;
+  color: #ea8d54;
+}

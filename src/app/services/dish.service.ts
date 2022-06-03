@@ -24,7 +24,6 @@ export class DishService {
   }
 
   public updateDish(dish: DishExtended): Observable<DishExtended> {
-    console.log(dish)
     return this.http.post<DishExtended>(this.dishUrl, dish);
   }
 }

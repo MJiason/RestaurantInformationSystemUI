@@ -1,0 +1,19 @@
+<div class="order-item" [ngClass]="style">
+  <div class="flex orderTop">
+    <h3>{{order.orderStatus}}</h3>
+    <mat-icon id="orderInd">fiber_manual_record</mat-icon>
+  </div>
+  <h4> Order # {{order.id}}</h4>
+  <h4> Order Time: {{order.time | date :'shortTime'}}</h4>
+
+  <h4> Comment {{order.comment}}</h4>
+  <mat-divider></mat-divider>
+  <ng-container *ngFor="let dish of order.dishes">
+    <div class="flex">
+      <h4>{{dish.dish.name}}</h4>
+      <h4>x{{dish.count}}</h4>
+    </div>
+  </ng-container>
+  <mat-divider></mat-divider>
+  <button color="success" style="width: inherit" mat-button >Submit</button>
+</div>

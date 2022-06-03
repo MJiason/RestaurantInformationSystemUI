@@ -34,6 +34,9 @@ import {MatChipsModule} from "@angular/material/chips";
 import { ImageUploadComponent } from './components/image-upload/image-upload.component';
 import {ImageCropperModule} from "ngx-image-cropper";
 import {NgxMatFileInputModule} from "@angular-material-components/file-input";
+import { OrderItemComponent } from './components/order-item/order-item.component';
+import {KitchenComponent} from "./components/kitchen/kitchen.component";
+import {ScrollingModule} from "@angular/cdk/scrolling";
 
 @NgModule({
   declarations: [
@@ -47,6 +50,8 @@ import {NgxMatFileInputModule} from "@angular-material-components/file-input";
     DishEditComponent,
     IngredientSelectComponent,
     ImageUploadComponent,
+    OrderItemComponent,
+    KitchenComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,7 +78,8 @@ import {NgxMatFileInputModule} from "@angular-material-components/file-input";
     MatChipsModule,
     ImageCropperModule,
     FormsModule,
-    NgxMatFileInputModule
+    NgxMatFileInputModule,
+    ScrollingModule,
 
   ],
   providers: [CardComponent],
