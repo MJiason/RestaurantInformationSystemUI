@@ -1,0 +1,37 @@
+.block{
+  display: flex;
+  flex-wrap: wrap;
+  width: 1250px;
+
+}
+table {
+  width: inherit;
+}
+
+
+.new-order{
+  color: green;
+}
+
+.entering-order {
+  color: #ea8d54;
+}
+
+.ready-order {
+  color: blue;
+}
+
+
+.delivered-order {
+  color: crimson;
+}
+
+.dl-row-button {
+  width: 40px;
+  height: 40px;
+  background: #f8f8f8
+}
+
+.dl-circle-icon {
+  color: #111111;
+}

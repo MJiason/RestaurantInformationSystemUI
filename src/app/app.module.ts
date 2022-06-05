@@ -37,6 +37,10 @@ import {NgxMatFileInputModule} from "@angular-material-components/file-input";
 import { OrderItemComponent } from './components/order-item/order-item.component';
 import {KitchenComponent} from "./components/kitchen/kitchen.component";
 import {ScrollingModule} from "@angular/cdk/scrolling";
+import { WaiterComponent } from './components/waiter/waiter.component';
+import {MatTableModule} from "@angular/material/table";
+import { WaiterOrdersComponent } from './components/waiter/waiter-orders/waiter-orders.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +56,9 @@ import {ScrollingModule} from "@angular/cdk/scrolling";
     ImageUploadComponent,
     OrderItemComponent,
     KitchenComponent,
+    WaiterComponent,
+    WaiterOrdersComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -80,6 +87,7 @@ import {ScrollingModule} from "@angular/cdk/scrolling";
     FormsModule,
     NgxMatFileInputModule,
     ScrollingModule,
+    MatTableModule,
 
   ],
   providers: [CardComponent],

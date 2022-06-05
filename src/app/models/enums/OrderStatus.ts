@@ -1,5 +1,7 @@
 export enum OrderStatus {
   ENTERING = "ENTERING",
-  INGREDIENT = "INGREDIENT",
   NEW = "NEW",
+  READY = "READY",
+  DELIVERED = "DELIVERED",
+  UNDEFINED = "UNDEFINED",
 }

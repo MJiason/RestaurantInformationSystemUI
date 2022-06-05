@@ -1,0 +1,49 @@
+<div class="block">
+  <h2>ORDERS TABLE</h2>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Table Number</th>
+      <td [routerLink]="['/table', element.id]" mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="NEW">
+      <th class="new-order" mat-header-cell *matHeaderCellDef> NEW ORDERS</th>
+      <td [routerLink]="['/table', element.id]" class="new-order" mat-cell *matCellDef="let element"> {{element.NEW}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="ENTERING">
+      <th class="entering-order" mat-header-cell *matHeaderCellDef> ENTERING ORDERS</th>
+      <td [routerLink]="['/table', element.id]" class="entering-order" mat-cell *matCellDef="let element"> {{element.ENTERING}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="READY">
+      <th class="ready-order" mat-header-cell *matHeaderCellDef> READY ORDERS</th>
+      <td [routerLink]="['/table', element.id]" class="ready-order" mat-cell *matCellDef="let element"> {{element.READY}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="DELIVERED">
+      <th class="delivered-order" mat-header-cell *matHeaderCellDef> DELIVERED ORDERS</th>
+      <td [routerLink]="['/table', element.id]" class="delivered-order" mat-cell *matCellDef="let element"> {{element.DELIVERED}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="SUM">
+      <th  mat-header-cell *matHeaderCellDef> COUNT</th>
+      <td [routerLink]="['/table', element.id]"  mat-cell *matCellDef="let element"> {{element.sum}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <td mat-header-cell *matHeaderCellDef></td>
+      <th mat-cell *matCellDef="let element">
+        <button [disabled] = "element.ENTERING !== 0 ||
+                              element.NEW !== 0 ||
+                              element.READY !==0"
+                mat-button color="warn" (click)="closeOrder(element.id)">Close Order</button>
+      </th>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

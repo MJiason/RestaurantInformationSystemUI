@@ -34,3 +34,25 @@
   background-color: white;
   color: #ea8d54;
 }
+
+._ready-order {
+  border-color: #7dabfd;
+}
+._ready-order .orderTop{
+  color: #3482f6;
+}
+._ready-order .mat-success {
+  background-color: white;
+  color: #3482f6;
+}
+
+._delivered-order {
+  border-color: #fd7d94;
+}
+._delivered-order .orderTop{
+  color: #e82435;
+}
+._delivered-order .mat-success {
+  background-color: white;
+  color: #e82435;
+}

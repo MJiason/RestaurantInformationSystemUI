@@ -1,0 +1,21 @@
+<ng-container *ngIf="orders.length === 0">
+  <div style="margin-left: 400px">
+    <a [routerLink]="['/waiter']" >
+      <h3>There no orders in ready status click to return back</h3>
+    </a>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="orders.length > 0">
+  <div style="margin-left: 500px">
+      <h2>Ready orders for {{orders[0].tableNum}} table</h2>
+  </div>
+</ng-container>
+
+<div class="kitchen-new">
+  <ng-container *ngFor="let order of orders">
+    <app-order-item [order]=order
+    ></app-order-item>
+  </ng-container>
+</div>
+

@@ -1,4 +1,4 @@
-<div class="order-item" [ngClass]="style">
+<div class="order-item" [ngClass]="getStyle(order.orderStatus)">
   <div class="flex orderTop">
     <h3>{{order.orderStatus}}</h3>
     <mat-icon id="orderInd">fiber_manual_record</mat-icon>
@@ -15,5 +15,5 @@
     </div>
   </ng-container>
   <mat-divider></mat-divider>
-  <button color="success" style="width: inherit" mat-button >Submit</button>
+  <button color="success" style="width: inherit" mat-button (click)="changeStatus()">{{buttonName}}</button>
 </div>
