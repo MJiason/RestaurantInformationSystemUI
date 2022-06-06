@@ -41,6 +41,9 @@ import { WaiterComponent } from './components/waiter/waiter.component';
 import {MatTableModule} from "@angular/material/table";
 import { WaiterOrdersComponent } from './components/waiter/waiter-orders/waiter-orders.component';
 import { LoginComponent } from './components/login/login.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import {UnautorizeComponent} from "./components/login/unautorize/unautorize.component";
+
 
 @NgModule({
   declarations: [
@@ -59,6 +62,8 @@ import { LoginComponent } from './components/login/login.component';
     WaiterComponent,
     WaiterOrdersComponent,
     LoginComponent,
+    PageNotFoundComponent,
+    UnautorizeComponent,
   ],
   imports: [
     BrowserModule,

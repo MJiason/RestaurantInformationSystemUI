@@ -1,1 +1,17 @@
-<p>login works!</p>
+<div style="display: flex; flex-direction: column">
+  <mat-form-field appearance="fill">
+    <mat-label>Favorite food</mat-label>
+    <mat-select [(value)]="role" >
+      <mat-option *ngFor="let item of ROLES" [value]="item">
+        {{item}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <ng-container *ngIf="role === 'USER'">
+    <mat-form-field appearance="fill">
+      <mat-label>Table num</mat-label>
+      <input matInput type="number" [value]="tableNum">
+    </mat-form-field>
+  </ng-container>
+  <button mat-button color="warn" (click)="login()">LOGIN</button>
+</div>

@@ -5,4 +5,7 @@ export const routerUrl = {
   kitchen:"kitchen",
   waiter:"waiter",
   table: "table/:id",
+  login: "login",
+  emptyPath: "",
+  pageNotFound: "**",
 }

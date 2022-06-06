@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {DishExtended} from "../../models/dish-extended";
 import {DishService} from "../../services/dish.service";
+import {AuthService} from "../../services/auth-service";
 
 @Component({
   selector: 'app-dish',
@@ -14,7 +15,8 @@ export class DishComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private dishService: DishService
+    private dishService: DishService,
+    public authService:AuthService,
   ) {
   }
 

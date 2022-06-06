@@ -7,6 +7,8 @@ import {DishEditComponent} from "./components/dish-edit/dish-edit.component";
 import {KitchenComponent} from "./components/kitchen/kitchen.component";
 import {WaiterComponent} from "./components/waiter/waiter.component";
 import {WaiterOrdersComponent} from "./components/waiter/waiter-orders/waiter-orders.component";
+import {PageNotFoundComponent} from "./components/page-not-found/page-not-found.component";
+import {LoginComponent} from "./components/login/login.component";
 
 
 
@@ -17,6 +19,10 @@ const routes: Routes = [
   { path: routerUrl.kitchen, component: KitchenComponent },
   { path: routerUrl.waiter, component: WaiterComponent },
   { path: routerUrl.table, component: WaiterOrdersComponent },
+  { path: routerUrl.login, component: LoginComponent },
+  { path: routerUrl.emptyPath, component: LoginComponent },
+  { path: routerUrl.pageNotFound, component: PageNotFoundComponent },
+
 ];
 
 @NgModule({

@@ -7,12 +7,12 @@
       <button mat-button (click)="handleButton(category.name)">{{category.name}}</button>
     </ng-container>
   </div>
-  <div>
-    <button mat-icon-button (click)="openDialog()" matBadge="{{cardService.dishesCount}}"
+  <div >
+    <button *ngIf="authService.isUser()" mat-icon-button (click)="openDialog()" matBadge="{{cardService.dishesCount}}"
             [matBadgeHidden]="cardService.dishesCount === 0" matBadgePosition="before" matBadgeColor="warn"
             matBadgeSize="small">
       <mat-icon>shopping_cart</mat-icon>
     </button>
-    <button class="catalog-button">Checkout</button>
+    <button *ngIf="authService.isUser()" class="catalog-button">Checkout</button>
   </div>
 </mat-toolbar>

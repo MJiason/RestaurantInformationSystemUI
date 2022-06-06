@@ -6,6 +6,7 @@ import {routerUrl} from "../../../environments/router-manger";
 import {MatDialog} from "@angular/material/dialog";
 import {CardComponent} from "./card/card.component";
 import {CardService} from "../../services/card.service";
+import {AuthService} from "../../services/auth-service";
 
 @Component({
   selector: 'app-toolbar',
@@ -21,7 +22,8 @@ export class ToolbarComponent implements OnInit {
     public cardService: CardService,
     private categoryService: CategoryService,
     private router: Router,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    public authService: AuthService,
   ) {
   }
 
