@@ -5,7 +5,7 @@
 
   <div class="ingredient-container">
     <p>{{dish.name}}</p>
-    <h4>Description Description Description Description Description Description Description</h4>
+    <h4>Смачний, соковитий, вітамінний і яскравий весняний салат з ніжною заправкою</h4>
     <div class="ingredient-image-container">
       <ng-container *ngFor="let ingredient of dish.ingredients">
         <div>
@@ -16,8 +16,8 @@
     </div>
 
     <div class="catalog-bottom">
-      <h3><strong>{{dish.price}} UAN</strong></h3>
-      <button *ngIf="authService.isUser()" class="catalog-button">Add to card</button>
+      <h3><strong>{{dish.price}} ГРН</strong></h3>
+      <button *ngIf="authService.isUser()" class="catalog-button">Додати</button>
       <span>
         <button *ngIf="authService.isAmin()" [routerLink]="['/dish-edit', dish.id]" mat-button class="admin-button">Edit dish</button>
       </span>

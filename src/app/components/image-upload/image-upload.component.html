@@ -5,9 +5,10 @@
   <mat-form-field class="image-uploader">
     <ngx-mat-file-input [formControl]="fileControl"
                         (change)="uploadPhoto()"
+                        placeholder="Оберіть файл"
                         [accept]="accept"
                         [color]="color">
     </ngx-mat-file-input>
   </mat-form-field>
-  <button [disabled]="fileControl.invalid" mat-button (click)="savePhoto()">Save image</button>
+  <button [disabled]="fileControl.invalid" mat-button (click)="savePhoto()">Зберегти зображення</button>
 </div>

@@ -47,13 +47,13 @@ export class OrderItemComponent implements OnInit {
   private calculateButtonName(orderStatus: OrderStatus): void {
     switch (orderStatus) {
       case OrderStatus.ENTERING:
-        this.buttonName = "TO READY";
+        this.buttonName = "Готова";
         break;
       case OrderStatus.NEW:
-        this.buttonName = "TO PROCCESING";
+        this.buttonName = "Готується";
         break;
       case OrderStatus.READY:
-        this.buttonName = "TO DELIVERED";
+        this.buttonName = "На видачу";
         break;
     }
   }

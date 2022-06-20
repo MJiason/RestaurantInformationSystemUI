@@ -13,6 +13,6 @@
             matBadgeSize="small">
       <mat-icon>shopping_cart</mat-icon>
     </button>
-    <button *ngIf="authService.isUser()" class="catalog-button">Checkout</button>
+    <button *ngIf="authService.isUser() && cardService.dishesCount > 0" class="catalog-button">Замовити</button>
   </div>
 </mat-toolbar>

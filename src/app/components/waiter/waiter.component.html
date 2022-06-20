@@ -1,29 +1,29 @@
 <div class="block">
-  <h2>ORDERS TABLE</h2>
+  <h2>Таблиця замовлень</h2>
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef> Table Number</th>
+      <th mat-header-cell *matHeaderCellDef> Номер Стола</th>
       <td [routerLink]="['/table', element.id]" mat-cell *matCellDef="let element"> {{element.id}} </td>
     </ng-container>
 
     <ng-container matColumnDef="NEW">
-      <th class="new-order" mat-header-cell *matHeaderCellDef> NEW ORDERS</th>
+      <th class="new-order" mat-header-cell *matHeaderCellDef> НОВІ ЗАМОВЛЕННЯ</th>
       <td [routerLink]="['/table', element.id]" class="new-order" mat-cell *matCellDef="let element"> {{element.NEW}} </td>
     </ng-container>
 
     <ng-container matColumnDef="ENTERING">
-      <th class="entering-order" mat-header-cell *matHeaderCellDef> ENTERING ORDERS</th>
+      <th class="entering-order" mat-header-cell *matHeaderCellDef> ГОТУЄТЬСЯ</th>
       <td [routerLink]="['/table', element.id]" class="entering-order" mat-cell *matCellDef="let element"> {{element.ENTERING}} </td>
     </ng-container>
 
     <ng-container matColumnDef="READY">
-      <th class="ready-order" mat-header-cell *matHeaderCellDef> READY ORDERS</th>
+      <th class="ready-order" mat-header-cell *matHeaderCellDef> ГОТОВІ</th>
       <td [routerLink]="['/table', element.id]" class="ready-order" mat-cell *matCellDef="let element"> {{element.READY}} </td>
     </ng-container>
 
     <ng-container matColumnDef="DELIVERED">
-      <th class="delivered-order" mat-header-cell *matHeaderCellDef> DELIVERED ORDERS</th>
+      <th class="delivered-order" mat-header-cell *matHeaderCellDef> ВИДАНІ</th>
       <td [routerLink]="['/table', element.id]" class="delivered-order" mat-cell *matCellDef="let element"> {{element.DELIVERED}} </td>
     </ng-container>
 
@@ -38,7 +38,7 @@
         <button [disabled] = "element.ENTERING !== 0 ||
                               element.NEW !== 0 ||
                               element.READY !==0"
-                mat-button color="warn" (click)="closeOrder(element.id)">Close Order</button>
+                mat-button color="warn" (click)="closeOrder(element.id)">Закрити</button>
       </th>
     </ng-container>
 

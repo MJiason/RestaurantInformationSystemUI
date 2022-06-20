@@ -1,6 +1,6 @@
 
 <mat-form-field  class="chip-list" appearance="fill">
-  <mat-label>Ingredients</mat-label>
+  <mat-label>Інгредієнти</mat-label>
   <mat-chip-list #chipList [formControl]="ingredients" aria-label="Ingredient selection">
     <mat-chip color="primary"
       *ngFor="let ingredient of ingredientsArr"
@@ -11,7 +11,7 @@
       </button>
     </mat-chip>
     <input
-      placeholder="New ingredient..."
+      placeholder="Новий ігредієнт..."
       #ingredientInput
       [formControl]="inputControl"
       [matAutocomplete]="auto"

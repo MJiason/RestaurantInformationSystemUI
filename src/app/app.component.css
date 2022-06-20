@@ -1,7 +1,7 @@
 .main-component {
   min-height: 60%;
   background: #f4f4f5;
-  padding: 5% 7% 5% 7%;
+  padding: 5% 7% 5% 12%;
   display: flex;
   flex-wrap: wrap;
 }
